@@ -1,0 +1,26 @@
+.pedigree_row {
+    display: flex;
+}
+
+.pedigree_col {
+    align-items: center;
+    display: grid;
+    border-style: outset;
+    border-width: thin;
+    width: 20%;
+}
+
+.pedigree_divisor {
+    border-bottom: solid;
+    border-width: thin;
+}
+
+
+.pedigree_cat {
+    border-bottom: solid;
+}
+
+.pedigree_avos {
+    margin-top: 17%;
+    margin-bottom: 17%;
+}

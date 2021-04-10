@@ -1,0 +1,32 @@
+<mat-toolbar>
+  <button mat-button [matMenuTriggerFor]="menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/dashboard">
+      <mat-icon>home</mat-icon>
+      Home
+    </button>
+    <button mat-menu-item (click)="contacts()">
+      <mat-icon>groups</mat-icon>
+      Contacts
+    </button>
+
+  </mat-menu>
+  <span>Petgree</span>
+  <span class="example-spacer"></span>
+
+  <div *ngIf="fbas.isLoggedIn">
+    <button mat-button (click)="fbas.logout()">
+      logout
+    </button>
+  </div>
+
+  <div *ngIf="!fbas.isLoggedIn">
+    <button mat-button (click)="fbas.login()">
+      login
+    </button>
+  </div>
+
+
+</mat-toolbar>

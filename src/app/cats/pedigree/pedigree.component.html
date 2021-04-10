@@ -1,0 +1,212 @@
+<div class="container">
+    <!-- Cat's name -->
+    <div class="row pedigree_row" style="height: 40px; margin-top:20px;">
+        <div class="col-sm-10 text-center">
+            Cat's name
+        </div>
+    </div>
+
+    <!-- Cat's Properties -->
+    <div class="row pedigree_row" style="height: 70px">
+        <div class="col-sm-4" style="font-size: 10px;">
+            <b>Cor: </b>cor<br />
+            <b>Raça: </b>race<br />
+            <b>Propietario: </b>name<br />
+        </div>
+        <div class="col-sm-4" style="font-size: 10px;">
+            <b>Cor dos Olhos: </b>eye.description<br />
+            <b>Sexo: </b>cat.sex<br />
+            <b>Criador: </b>creator.name<br />
+        </div>
+        <div class="col-sm-4" style="font-size: 10px;">
+            <b>Nascido em: </b>birth_date.ToString("dd/MM/yyyy")<br />
+            <b>Nº Pedigree: </b>homologation<br />
+            <b>Gatil: </b>cattery.name<br />
+            <b>Hmlg: </b><br />
+        </div>
+    </div>
+
+
+    <!-- Headers -->
+    <div class="row pedigree_row">
+        <div class="col-sm-2 pedigree_col">Pais</div>
+        <div class="col-sm-2 pedigree_col">Avós</div>
+        <div class="col-sm-2 pedigree_col">Bisavós</div>
+        <div class="col-sm-2 pedigree_col">Trisavós</div>
+        <div class="col-sm-2 pedigree_col">Tetravós</div>
+    </div>    
+
+    <!-- Family tree -->
+    <div class="row pedigree_row">
+
+        <!-- Pais -->
+        <div class="col-md-2 pedigree_col">
+            <div class="row">
+                pai
+            </div>
+            <div class="row">
+                mae
+            </div>
+        </div>
+
+
+
+        <!-- Avós -->
+        <div class="col-md-2 pedigree_col">
+            <div class="row pedigree_divisor">
+                avô
+                avó
+            </div>
+            <div class="row">
+                mae_avo;
+                mae_avoo;
+            </div>
+        </div>
+
+        <!-- Bisavós -->
+        <div class="col-md-2 pedigree_col">
+            <div class="row pedigree_divisor">
+                pai_avo_bisavo;
+                pai_avo_bisavoo;
+            </div>
+            <div class="row pedigree_divisor">
+                pai_avoo_bisavo;
+                pai_avoo_bisavoo;
+            </div>
+            <div class="row pedigree_divisor">
+                mae_avo_bisavo;
+                mae_avo_bisavoo;
+            </div>
+            <div class="row">
+                mae_avoo_bisavo;
+                mae_avoo_bisavoo;
+            </div>
+        </div>
+
+        <!-- Trisavós -->
+        <div class="col-md-2 pedigree_col">
+            <div class="row pedigree_divisor">
+                pai_avo_bisavo_tataravo;
+                pai_avo_bisavo_tataravoo;
+            </div>
+            <div class="row pedigree_divisor">
+                pai_avo_bisavoo_tataravo;
+                pai_avo_bisavoo_tataravoo;
+            </div>
+            <div class="row pedigree_divisor">
+                pai_avoo_bisavo_tataravo;
+                pai_avoo_bisavo_tataravoo;
+            </div>
+            <div class="row pedigree_divisor">
+                pai_avoo_bisavoo_tataravo;
+                pai_avoo_bisavoo_tataravoo;
+            </div>
+            <div class="row pedigree_divisor">
+                mae_avo_bisavo_tataravo;
+                mae_avo_bisavo_tataravoo;
+            </div>
+            <div class="row pedigree_divisor">
+                mae_avo_bisavoo_tataravo;
+                mae_avo_bisavoo_tataravoo;
+            </div>
+            <div class="row pedigree_divisor">
+                mae_avoo_bisavo_tataravo;
+                mae_avoo_bisavo_tataravoo;
+            </div>
+            <div class="row">
+                mae_avoo_bisavoo_tataravo;
+                mae_avoo_bisavoo_tataravoo;
+            </div>
+        </div>
+
+        <!-- Tetravós -->
+        <div class="col-md-2 pedigree_col">
+            <div class="row pedigree_divisor">
+                pai_avo_bisavo_tataravo_tetravo;
+                pai_avo_bisavo_tataravo_tetravoo;
+            </div>
+            <div class="row pedigree_divisor">
+                pedigree.pai_avo_bisavo_tataravoo_tetravo;
+                pai_avo_bisavo_tataravoo_tetravoo;
+            </div>
+            <div class="row pedigree_divisor">
+                pai_avo_bisavoo_tataravo_teravo;
+                pai_avo_bisavoo_tataravo_teravoo;
+            </div>
+            <div class="row pedigree_divisor">
+                pai_avo_bisavoo_tataravoo_tetravo;
+                pai_avo_bisavoo_tataravoo_tetravoo;
+            </div>
+            <div class="row pedigree_divisor">
+                pai_avoo_bisavo_tataravo_tetravo;
+                pai_avoo_bisavo_tataravo_tetravoo;
+            </div>
+            <div class="row pedigree_divisor">
+                pai_avoo_bisavo_tataravoo_tetravo;
+                pai_avoo_bisavo_tataravoo_tetravoo;
+            </div>
+            <div class="row pedigree_divisor">
+                pai_avoo_bisavoo_tataravo_tetravo;
+                pai_avoo_bisavoo_tataravo_tetravoo;
+            </div>
+            <div class="row pedigree_divisor">
+                pai_avoo_bisavoo_tataravoo_tetravo;
+                pai_avoo_bisavoo_tataravoo_tetravoo;
+            </div>
+
+            <div class="row pedigree_divisor">
+                mae_avo_bisavo_tataravo_tetravo;
+                mae_avo_bisavo_tataravo_tetravoo;
+            </div>
+            <div class="row pedigree_divisor">
+                mae_avo_bisavo_tataravoo_tetravo;
+                mae_avo_bisavo_tataravoo_tetravoo;
+            </div>
+            <div class="row pedigree_divisor">
+                mae_avo_bisavoo_tataravo_tetravo;
+                mae_avo_bisavoo_tataravo_tetravoo;
+            </div>
+            <div class="row pedigree_divisor">
+                mae_avo_bisavoo_tataravoo_tetravo;
+                mae_avo_bisavoo_tataravoo_tetravoo;
+            </div>
+            <div class="row pedigree_divisor">
+                mae_avoo_bisavo_tataravo_tetravo;
+                mae_avoo_bisavo_tataravo_tetravoo;
+            </div>
+            <div class="row pedigree_divisor">
+                mae_avoo_bisavo_tataravoo_tetravo;
+                mae_avoo_bisavo_tataravoo_tetravoo;
+            </div>
+            <div class="row pedigree_divisor">
+                mae_avoo_bisavoo_tataravo_tetravo;
+                mae_avoo_bisavoo_tataravo_tetravoo;
+            </div>
+            <div class="row">
+                mae_avoo_bisavoo_tataravoo_tetravo;
+                mae_avoo_bisavoo_tataravoo_tetravoo;
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="row pedigree_row" style="margin-top:10px; height: 60px;">
+        <div class="col-sm-4">
+            <b>Data do Registro:</b> dd/mm/yyyy<br />
+            <b>Data da Transferência:</b> <br />
+
+        </div>
+        <div class="col-sm-4">
+            <b>Microship:</b> microship <br />
+        </div>
+        <div class="col-sm-4">
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $(".sidebar").addClass("collapse")
+        $("#page-wrapper").css({ 'margin': '0px' })
+    })
+</script>

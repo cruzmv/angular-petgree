@@ -1,0 +1,296 @@
+<div class="content">
+    <form [formGroup]="frmGroup" *ngIf="frmGroup">
+        <mat-accordion>
+            <!-- Cats data -->
+            <mat-expansion-panel [expanded]="true">
+                <mat-expansion-panel-header class="expansion-cat">
+                    <mat-panel-title>
+                        Cat
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        Cat's data
+                        <mat-icon class="icon_head">pets</mat-icon>
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+
+                <div class="row">
+                    <div class="col-4">
+                        <!-- src="assets/img/catshadow.jpg" -->
+                        <img src="{{ fileImageUrl }}" class="foto" (click)="changeImage()">
+                        <input #imageInput type='file' id="btnImage" class="file-image" (change)="addAttachment($event)">
+                        <mat-progress-bar mode="determinate" *ngIf="percentageUpload>0" value="{{percentageUpload}}"></mat-progress-bar>
+                    </div>
+                    <div class="col-8">
+                        <div class="row">
+                            <div class="col">
+                                <mat-form-field appearance="fill" style="width: 100%;">
+                                    <mat-label>Name</mat-label>
+                                    <input matInput placeholder="Name" formControlName="name">
+                                    <mat-hint>Cat's name</mat-hint>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <mat-form-field appearance="fill" style="width: 100%;">
+                                    <mat-label>Race</mat-label>
+                                    <input matInput placeholder="Race" formControlName="race">
+                                    <mat-icon matSuffix class="search" (click)="search_propertie('race')">search</mat-icon>
+                                    <mat-hint>Cat's Race</mat-hint>
+                                </mat-form-field>
+                            </div>
+                            <!-- 
+                            <div class="col-4">
+                                <mat-form-field appearance="fill" style="width: 100%;">
+                                    <mat-label>Sex</mat-label>
+                                    <input matInput placeholder="Sex" formControlName="sex">
+                                    <mat-hint>Cat's sex</mat-hint>
+                                </mat-form-field>
+                            </div>
+                            -->
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <mat-form-field appearance="fill" style="width: 100%;">
+                            <mat-label>Birth Date</mat-label>
+                            <input matInput [matDatepicker]="picker_birth" placeholder="Birth Date"
+                                formControlName="date_birth">
+                            <mat-datepicker-toggle matSuffix [for]="picker_birth"></mat-datepicker-toggle>
+                            <mat-datepicker #picker_birth></mat-datepicker>
+                            <mat-hint>Cat's birth date</mat-hint>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-6">
+                        <mat-form-field appearance="fill" style="width: 100%;">
+                            <mat-label>Arrival Date</mat-label>
+                            <input matInput [matDatepicker]="picker_arrival" placeholder="Arrival Date"
+                                formControlName="date_arrivel">
+                            <mat-datepicker-toggle matSuffix [for]="picker_arrival"></mat-datepicker-toggle>
+                            <mat-datepicker #picker_arrival></mat-datepicker>
+                            <mat-hint>Cat's arrival date</mat-hint>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <mat-form-field appearance="fill" style="width: 100%;">
+                            <mat-label>Pedigree</mat-label>
+                            <input matInput placeholder="Pedigree" formControlName="pedgree">
+                            <mat-hint>Cat's pedigree</mat-hint>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-6">
+                        <mat-form-field appearance="fill" style="width: 100%;">
+                            <mat-label>Microship</mat-label>
+                            <input matInput placeholder="Microship" formControlName="microship">
+                            <mat-hint>Cat's Microship</mat-hint>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </mat-expansion-panel>
+
+            <!-- Parents -->
+            <mat-expansion-panel>
+                <mat-expansion-panel-header class="expansion-parents">
+                    <mat-panel-title>
+                        Cat's parents
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        Cat's parents data
+                        <mat-icon class="icon_head">share</mat-icon>
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <div class="row">
+                    <div class="col-8 custom_col">
+                        <mat-form-field appearance="fill" style="width: 100%;">
+                            <mat-label>Father</mat-label>
+                            <input matInput placeholder="Father" formControlName="father">
+                            <mat-icon matSuffix class="search" (click)="search_parent('father')">search</mat-icon>
+                          </mat-form-field>
+                    </div>
+                    <div class="col-4 custom_col">
+                        <mat-form-field appearance="fill" style="width: 100%;">
+                            <mat-label>Race</mat-label>
+                            <input matInput placeholder="Race" formControlName="father_race">
+                            <mat-hint>Cat's Father's Race</mat-hint>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-8 custom_col">
+                        <mat-form-field appearance="fill" style="width: 100%;">
+                            <mat-label>Mother</mat-label>
+                            <input matInput placeholder="Mother" formControlName="mother">
+                            <mat-icon matSuffix class="search" (click)="search_parent('mother')">search</mat-icon>
+                          </mat-form-field>
+                    </div>
+                    <div class="col-4 custom_col">
+                        <mat-form-field appearance="fill" style="width: 100%;">
+                            <mat-label>Race</mat-label>
+                            <input matInput placeholder="Race" formControlName="mother_race">
+                            <mat-hint>Cat's Mother's Race</mat-hint>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </mat-expansion-panel>
+
+            <!-- Properties -->
+            <mat-expansion-panel>
+                <mat-expansion-panel-header class="expansion-properties">
+                    <mat-panel-title>
+                        Cat's properties
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        Cat's properties data
+                        <mat-icon class="icon_head">transgender</mat-icon>
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <div class="row">
+                    <div class="col-6 custom_col">
+                        <mat-form-field appearance="fill" style="width: 100%;">
+                            <mat-label>Color</mat-label>
+                            <input matInput placeholder="Color" formControlName="color" >
+                            <mat-icon matSuffix class="search" (click)="search_propertie('color')">search</mat-icon>
+                            <mat-hint>Cat's color</mat-hint>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-6 custom_col">
+                        <mat-form-field appearance="fill" style="width: 100%;">
+                            <mat-label>Marks</mat-label>
+                            <input matInput placeholder="Marks" formControlName="marks" >
+                            <mat-icon matSuffix class="search" (click)="search_propertie('marks')">search</mat-icon>
+                            <mat-hint>Cat's marks</mat-hint>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6 custom_col">
+                        <mat-form-field appearance="fill" style="width: 100%;">
+                            <mat-label>Partcolor</mat-label>
+                            <input matInput placeholder="partcolor" formControlName="part_color" >
+                            <mat-icon matSuffix class="search" (click)="search_propertie('part_color')">search</mat-icon>
+                            <mat-hint>Cat's partcolor</mat-hint>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-6 custom_col">
+                        <mat-form-field appearance="fill" style="width: 100%;">
+                            <mat-label>Patter</mat-label>
+                            <input matInput placeholder="patter" formControlName="patter" >
+                            <mat-icon matSuffix class="search" (click)="search_propertie('patter')">search</mat-icon>
+                            <mat-hint>Cat's patters</mat-hint>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6 custom_col">
+                        <mat-form-field appearance="fill" style="width: 100%;">
+                            <mat-label>Sex</mat-label>
+                            <input matInput placeholder="Sex" formControlName="sex" >
+                            <mat-icon matSuffix class="search" (click)="search_propertie('sex')">search</mat-icon>
+                            <mat-hint>Cat's Sex</mat-hint>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-6 custom_col">
+                        <mat-form-field appearance="fill" style="width: 100%;">
+                            <mat-label>Eyes</mat-label>
+                            <input matInput placeholder="Eyes" formControlName="eyes" >
+                            <mat-icon matSuffix class="search" (click)="search_propertie('eyes')">search</mat-icon>
+                            <mat-hint>Cat's Eyes</mat-hint>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6 custom_col">
+                        <mat-form-field appearance="fill" style="width: 100%;">
+                            <mat-label>Breeder</mat-label>
+                            <input matInput placeholder="Breeder" formControlName="breeder" >
+                            <mat-icon matSuffix class="search" (click)="search_propertie('breeder')">search</mat-icon>
+                            <mat-hint>Cat's Breeder</mat-hint>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-6 custom_col">
+                        <mat-form-field appearance="fill" style="width: 100%;">
+                            <mat-label>Country Origin</mat-label>
+                            <input matInput placeholder="Country Origin" formControlName="country" >
+                            <mat-icon matSuffix class="search" (click)="search_propertie('country')">search</mat-icon>
+                            <mat-hint>Cat's Country Origin</mat-hint>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </mat-expansion-panel>
+
+            <!-- Contacs -->
+            <mat-expansion-panel>
+                <mat-expansion-panel-header class="expansion-contacts">
+                    <mat-panel-title>
+                        Contacts
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        Contacts related to the cat
+                        <mat-icon class="icon_head">contacts</mat-icon>
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field appearance="fill" style="width: 100%;">
+                            <mat-label>Cattery</mat-label>
+                            <input matInput placeholder="Cattery" formControlName="cattery" >
+                            <mat-icon matSuffix class="search" (click)="search_contact('cattery')">search</mat-icon>
+                            <mat-hint>Cat's Cattery</mat-hint>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field appearance="fill" style="width: 100%;">
+                            <mat-label>Creator</mat-label>
+                            <input matInput placeholder="Creator" formControlName="creator" >
+                            <mat-icon matSuffix class="search" (click)="search_contact('creator')">search</mat-icon>
+                            <mat-hint>Cat's Creator</mat-hint>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field appearance="fill" style="width: 100%;">
+                            <mat-label>Proprietary</mat-label>
+                            <input matInput placeholder="Proprietary" formControlName="proprietary" >
+                            <mat-icon matSuffix class="search" (click)="search_contact('proprietary')">search</mat-icon>
+                            <mat-hint>Cat's Proprietary</mat-hint>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </mat-expansion-panel>
+
+            <!-- Obs -->
+            <mat-expansion-panel>
+                <mat-expansion-panel-header class="expansion-obs">
+                    <mat-panel-title>
+                        Observations
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        Observations about the cat
+                        <mat-icon class="icon_head">comment</mat-icon>
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field appearance="fill" style="width: 100%;">
+                            <mat-label>Observations</mat-label>
+                            <input matInput placeholder="Observations" formControlName="obs" >
+                            <mat-hint>Cat's Observations</mat-hint>
+                        </mat-form-field>    
+                    </div>
+                </div>
+            </mat-expansion-panel>
+
+        </mat-accordion>
+        <div class="button_action">
+            <button type="submit" mat-raised-button color="primary" (click)="saveCat(frmGroup.value)" style="margin-right: 10px;">Save</button>
+            <button mat-raised-button color="warn" routerLink="/dashboard">Back</button>
+        </div>
+
+    </form>
+</div>

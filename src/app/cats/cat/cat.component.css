@@ -1,0 +1,63 @@
+.mat-form-field + .mat-form-field {
+    margin-left: 8px;
+}
+
+.search{
+    cursor: pointer;
+}
+
+.custom_col{
+    padding: 2px;
+}
+
+.button_action{
+    margin: 10px;
+    float: right;
+}
+
+img{
+    cursor: pointer;
+}
+
+.foto{
+    max-width: 170px;
+    max-height: 170px;
+}
+
+.file-image{
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+
+mat-progress-bar{
+    top: -20px;
+    width: 102%;
+}
+
+mat-panel-description{
+    justify-content: flex-end;
+}
+
+.icon_head{
+    margin-left: 10px;
+}
+
+.expansion-cat{
+    background-color: #E8EAF6;
+}
+.expansion-parents{
+    background-color: #E3F2FD;
+}
+.expansion-properties{
+    background-color: #E1F5FE;
+}
+.expansion-contacts{
+    background-color: #E0F7FA;
+}
+.expansion-obs{
+    background-color: #E0F2F1;
+}
+
+
+
