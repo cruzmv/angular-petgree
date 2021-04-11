@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 import { ContactDialogComponent } from './contact-dialog.component';
 
@@ -12,6 +12,7 @@ describe('ContactDialogComponent', () => {
       declarations: [ ContactDialogComponent ],
       providers: [
         {provide: MatDialogRef, useValue: {}},
+        {provide: MAT_DIALOG_DATA, useValue: {}},
       ]
     })
     .compileComponents();

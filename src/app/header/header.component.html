@@ -16,13 +16,13 @@
   <span>Petgree</span>
   <span class="example-spacer"></span>
 
-  <div *ngIf="fbas.isLoggedIn">
+  <div *ngIf="fbas.isLoggedIn()">
     <button mat-button (click)="fbas.logout()">
       logout
     </button>
   </div>
 
-  <div *ngIf="!fbas.isLoggedIn">
+  <div *ngIf="!fbas.isLoggedIn()">
     <button mat-button (click)="fbas.login()">
       login
     </button>

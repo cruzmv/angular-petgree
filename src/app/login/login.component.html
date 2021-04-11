@@ -1,7 +1,7 @@
-<div *ngIf="auth.isLoggedIn && auth.userData != undefined">
+<div *ngIf="auth.isLoggedIn() && auth.userData != undefined">
     <h1>Hello {{ auth.userData.displayName }}!</h1>
     <button (click)="auth.logout()">Logout</button>
 </div>
-<div *ngIf="!auth.isLoggedIn" class="login_block">
+<div *ngIf="!auth.isLoggedIn()" class="login_block">
     <button mat-raised-button color="primary" (click)="auth.login()">Login with Google</button>
 </div>

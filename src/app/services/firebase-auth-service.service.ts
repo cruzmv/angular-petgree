@@ -50,7 +50,7 @@ export class FirebaseAuthServiceService {
     this.router.navigate(['login']);
   }
 
-  get isLoggedIn(): boolean {
+  isLoggedIn(): boolean {
     const userStorage: any = localStorage.getItem('user');
     if (userStorage.length > 2) {
       const user = JSON.parse(userStorage);

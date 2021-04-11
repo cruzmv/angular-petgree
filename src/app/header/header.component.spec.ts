@@ -1,7 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { AngularFireAuth } from '@angular/fire/auth';
-import { AngularFirestore } from '@angular/fire/firestore';
-import { RouterTestingModule } from '@angular/router/testing';
+import { MatMenuModule } from '@angular/material/menu';
+import { CatComponent } from '../cats/cat/cat.component';
 import { FirebaseAuthServiceService } from '../services/firebase-auth-service.service';
 
 import { HeaderComponent } from './header.component';
@@ -13,8 +12,10 @@ describe('HeaderComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ HeaderComponent ],
+      imports: [MatMenuModule],
       providers:[
-        {provide: FirebaseAuthServiceService, useValue: {} }
+        {provide: FirebaseAuthServiceService, useValue: {} },
+        {provide: CatComponent, useValue: {} }
       ]
     })
     .compileComponents();
